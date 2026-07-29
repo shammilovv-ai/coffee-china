@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee China — Оборудование для кофеен из Китая</title>
+    <title>Muhammadali Shamilov — Оборудование для кофеен из Китая</title>
     <style>
         @font-face {
             font-family: 'Custom';
             src: local('Segoe UI'), local('Roboto'), local('Helvetica Neue'), local('Arial');
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         html { scroll-behavior: smooth; }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: #0a0a0a;
@@ -21,9 +21,9 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         ::selection { background: #fff; color: #0a0a0a; }
-        
+
         /* Noise */
         .noise {
             position: fixed;
@@ -34,7 +34,7 @@
             opacity: 0.025;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
-        
+
         /* Nav */
         nav {
             position: fixed;
@@ -47,25 +47,26 @@
             z-index: 100;
             transition: background 0.4s;
         }
-        
+
         nav.scrolled {
             background: rgba(10,10,10,0.95);
             backdrop-filter: blur(20px);
         }
-        
+
         .logo {
             font-size: 1.4rem;
             font-weight: 500;
             letter-spacing: -0.02em;
             color: #fff;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
+            align-items: center;
         }
-        
+
         .nav-links a {
             color: #a3a3a3;
             text-decoration: none;
@@ -74,22 +75,48 @@
             text-transform: uppercase;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover { color: #fff; }
-        
+
+        .nav-contact {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .nav-contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid #333;
+            color: #a3a3a3;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .nav-contact a:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
         .menu-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
         }
-        
+
         .menu-toggle span {
             width: 24px;
             height: 1px;
             background: #fff;
         }
-        
+
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -101,7 +128,7 @@
             padding: 120px 24px 80px;
             position: relative;
         }
-        
+
         .hero-label {
             font-size: 0.7rem;
             letter-spacing: 0.3em;
@@ -111,7 +138,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 0.3s forwards;
         }
-        
+
         .hero-title {
             font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 300;
@@ -120,17 +147,17 @@
             margin-bottom: 28px;
             max-width: 900px;
         }
-        
+
         .hero-title span {
             display: block;
             opacity: 0;
             transform: translateY(40px);
         }
-        
+
         .hero-title span:nth-child(1) { animation: fadeUp 1s ease 0.5s forwards; }
         .hero-title span:nth-child(2) { animation: fadeUp 1s ease 0.7s forwards; }
         .hero-title span:nth-child(3) { animation: fadeUp 1s ease 0.9s forwards; }
-        
+
         .hero-subtitle {
             font-size: clamp(0.95rem, 1.5vw, 1.15rem);
             color: #a3a3a3;
@@ -141,7 +168,7 @@
             opacity: 0;
             animation: fadeUp 1s ease 1.1s forwards;
         }
-        
+
         .hero-cta {
             display: inline-flex;
             align-items: center;
@@ -158,12 +185,12 @@
             opacity: 0;
             animation: fadeUp 1s ease 1.3s forwards;
         }
-        
+
         .hero-cta:hover {
             background: #fff;
             color: #0a0a0a;
         }
-        
+
         .scroll-line {
             position: absolute;
             bottom: 40px;
@@ -175,27 +202,27 @@
             opacity: 0;
             animation: fadeIn 1s ease 1.8s forwards, pulse 2s ease-in-out 2s infinite;
         }
-        
+
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes fadeIn {
             to { opacity: 0.4; }
         }
-        
+
         @keyframes pulse {
             0%, 100% { opacity: 0.2; }
             50% { opacity: 0.6; }
         }
-        
+
         /* Sections */
         section {
             padding: 120px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .section-label {
             font-size: 0.7rem;
             letter-spacing: 0.25em;
@@ -203,7 +230,7 @@
             color: #525252;
             margin-bottom: 20px;
         }
-        
+
         .section-title {
             font-size: clamp(2rem, 4vw, 3.5rem);
             font-weight: 300;
@@ -212,7 +239,7 @@
             margin-bottom: 40px;
             max-width: 700px;
         }
-        
+
         /* About */
         .about-grid {
             display: grid;
@@ -220,16 +247,16 @@
             gap: 60px;
             align-items: center;
         }
-        
+
         .about-text {
             font-size: 1rem;
             color: #a3a3a3;
             line-height: 1.8;
             font-weight: 300;
         }
-        
+
         .about-text p { margin-bottom: 20px; }
-        
+
         .about-image {
             background: #171717;
             aspect-ratio: 4/5;
@@ -239,7 +266,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -248,23 +275,23 @@
             padding-top: 48px;
             border-top: 1px solid #262626;
         }
-        
+
         .stat-item { text-align: center; }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 300;
             line-height: 1;
             margin-bottom: 6px;
         }
-        
+
         .stat-label {
             font-size: 0.7rem;
             color: #525252;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-        
+
         /* Products */
         .products-header {
             display: flex;
@@ -274,13 +301,13 @@
             flex-wrap: wrap;
             gap: 24px;
         }
-        
+
         .products-filter {
             display: flex;
             gap: 24px;
             flex-wrap: wrap;
         }
-        
+
         .filter-btn {
             background: none;
             border: none;
@@ -294,28 +321,36 @@
             border-bottom: 1px solid transparent;
             transition: all 0.3s;
         }
-        
+
         .filter-btn:hover, .filter-btn.active {
             color: #fff;
             border-bottom-color: #fff;
         }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+
+        /* Carousel */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+        }
+
         .product-card {
             background: #171717;
             overflow: hidden;
             transition: transform 0.4s;
+            min-width: calc(33.333% - 14px);
+            flex-shrink: 0;
         }
-        
+
         .product-card:hover {
             transform: translateY(-4px);
         }
-        
+
         .product-image {
             aspect-ratio: 1;
             background: #262626;
@@ -325,14 +360,20 @@
             position: relative;
             overflow: hidden;
         }
-        
-        .product-image .placeholder-text {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #404040;
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1) brightness(0.9);
+            transition: filter 0.6s ease, transform 0.6s ease;
         }
-        
+
+        .product-card:hover .product-image img {
+            filter: grayscale(0%) contrast(1) brightness(1);
+            transform: scale(1.05);
+        }
+
         .product-overlay {
             position: absolute;
             top: 0; left: 0;
@@ -341,14 +382,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             opacity: 0;
             transition: opacity 0.4s;
+            flex-direction: column;
         }
-        
+
         .product-card:hover .product-overlay {
             opacity: 1;
         }
-        
+
         .product-cta {
             padding: 12px 28px;
             border: 1px solid #fff;
@@ -359,17 +402,20 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
-        
+
         .product-cta:hover {
             background: #fff;
             color: #0a0a0a;
         }
-        
+
         .product-info {
             padding: 24px;
         }
-        
+
         .product-category {
             font-size: 0.65rem;
             letter-spacing: 0.15em;
@@ -377,37 +423,73 @@
             color: #525252;
             margin-bottom: 6px;
         }
-        
+
         .product-name {
             font-size: 1.1rem;
             font-weight: 400;
             margin-bottom: 6px;
             line-height: 1.3;
         }
-        
+
         .product-price {
             font-size: 0.85rem;
             color: #737373;
             font-weight: 300;
         }
-        
+
         .product-price span {
             color: #fff;
             font-weight: 500;
         }
-        
+
+        .product-delivery {
+            font-size: 0.7rem;
+            color: #525252;
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: #fff;
+        }
+
+        .carousel-btn.prev { left: -24px; }
+        .carousel-btn.next { right: -24px; }
+
+        .carousel-btn.hidden { opacity: 0; pointer-events: none; }
+
         /* Process */
         .process-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 32px;
         }
-        
+
         .process-item {
             position: relative;
             padding-top: 32px;
         }
-        
+
         .process-number {
             font-size: 4rem;
             font-weight: 700;
@@ -417,32 +499,32 @@
             top: 0; left: 0;
             z-index: 0;
         }
-        
+
         .process-content {
             position: relative;
             z-index: 1;
             padding-top: 16px;
         }
-        
+
         .process-title {
             font-size: 1rem;
             font-weight: 500;
             margin-bottom: 10px;
         }
-        
+
         .process-desc {
             font-size: 0.85rem;
             color: #737373;
             line-height: 1.7;
             font-weight: 300;
         }
-        
+
         /* CTA */
         .cta-section {
             text-align: center;
             padding: 160px 24px;
         }
-        
+
         .cta-title {
             font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 300;
@@ -450,7 +532,7 @@
             margin-bottom: 24px;
             letter-spacing: -0.02em;
         }
-        
+
         .cta-subtitle {
             font-size: 1rem;
             color: #737373;
@@ -459,14 +541,14 @@
             font-weight: 300;
             line-height: 1.7;
         }
-        
+
         .cta-buttons {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -481,12 +563,12 @@
             text-transform: uppercase;
             transition: all 0.4s;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(255,255,255,0.1);
         }
-        
+
         .btn-secondary {
             display: inline-flex;
             align-items: center;
@@ -501,11 +583,31 @@
             text-transform: uppercase;
             transition: all 0.4s;
         }
-        
+
         .btn-secondary:hover {
             border-color: #fff;
         }
-        
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            border: 1px solid #25D366;
+            color: #25D366;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.4s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #25D366;
+            color: #0a0a0a;
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid #262626;
@@ -513,27 +615,27 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 60px;
         }
-        
+
         .footer-brand {
             font-size: 1.3rem;
             font-weight: 500;
             margin-bottom: 12px;
         }
-        
+
         .footer-desc {
             font-size: 0.85rem;
             color: #525252;
             line-height: 1.7;
             max-width: 280px;
         }
-        
+
         .footer-title {
             font-size: 0.7rem;
             font-weight: 500;
@@ -542,19 +644,19 @@
             color: #525252;
             margin-bottom: 20px;
         }
-        
+
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        
+
         .footer-links a {
             color: #737373;
             text-decoration: none;
             font-size: 0.85rem;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover { color: #fff; }
-        
+
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -562,17 +664,17 @@
             padding-top: 30px;
             border-top: 1px solid #262626;
         }
-        
+
         .footer-copy {
             font-size: 0.75rem;
             color: #404040;
         }
-        
+
         .footer-social {
             display: flex;
             gap: 20px;
         }
-        
+
         .footer-social a {
             color: #525252;
             text-decoration: none;
@@ -581,9 +683,9 @@
             text-transform: uppercase;
             transition: color 0.3s;
         }
-        
+
         .footer-social a:hover { color: #fff; }
-        
+
         /* Mobile Menu */
         .mobile-menu {
             position: fixed;
@@ -600,81 +702,107 @@
             pointer-events: none;
             transition: opacity 0.4s;
         }
-        
+
         .mobile-menu.active {
             opacity: 1;
             pointer-events: all;
         }
-        
+
         .mobile-menu a {
             font-size: 1.8rem;
             color: #fff;
             text-decoration: none;
         }
-        
+
+        .mobile-contacts {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .mobile-contacts a {
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
         /* Scroll animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-        
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .product-card { min-width: calc(50% - 10px); }
+            .carousel-btn.prev { left: 10px; }
+            .carousel-btn.next { right: 10px; }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+            .process-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        
+
         @media (max-width: 768px) {
             nav { padding: 16px 20px; }
             .nav-links { display: none; }
             .menu-toggle { display: flex; }
             section { padding: 80px 20px; }
-            .products-grid { grid-template-columns: 1fr; }
-            .process-grid { grid-template-columns: 1fr; }
+            .product-card { min-width: 85%; }
+            .carousel-track { gap: 16px; }
             .stats { grid-template-columns: 1fr; gap: 24px; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
             .cta-buttons { flex-direction: column; align-items: center; }
-            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+            .btn-primary, .btn-secondary, .btn-whatsapp { width: 100%; justify-content: center; }
+            .process-grid { grid-template-columns: 1fr; }
+            .carousel-btn { display: none; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
     <div class="noise"></div>
-    
+
     <nav id="navbar">
-        <div class="logo">Coffee China</div>
+        <div class="logo">Muhammadali Shamilov</div>
         <ul class="nav-links">
             <li><a href="#about">О проекте</a></li>
             <li><a href="#products">Каталог</a></li>
             <li><a href="#process">Как заказать</a></li>
             <li><a href="#contact">Контакты</a></li>
+            <li class="nav-contact">
+                <a href="https://t.me/shamllovv" target="_blank">TG</a>
+                <a href="https://wa.me/79289472555" target="_blank">WA</a>
+            </li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
         </div>
     </nav>
-    
+
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about" onclick="toggleMenu()">О проекте</a>
         <a href="#products" onclick="toggleMenu()">Каталог</a>
         <a href="#process" onclick="toggleMenu()">Как заказать</a>
         <a href="#contact" onclick="toggleMenu()">Контакты</a>
+        <div class="mobile-contacts">
+            <a href="https://t.me/shamllovv" target="_blank" onclick="toggleMenu()">Telegram</a>
+            <a href="https://wa.me/79289472555" target="_blank" onclick="toggleMenu()">WhatsApp</a>
+        </div>
     </div>
-    
+
     <!-- Hero -->
     <section class="hero">
         <div class="hero-label">Прямо из Китая</div>
@@ -684,13 +812,13 @@
             <span>для кофеен</span>
         </h1>
         <p class="hero-subtitle">
-            Итальянские кофемашины, дизайнерская мебель и светодиодные решения 
-            по ценам, которые невозможно найти в каталогах
+            Итальянские кофемашины, профессиональные кофемолки и дизайнерская мебель 
+            по ценам с доставкой, которые невозможно найти в обычных каталогах
         </p>
         <a href="#products" class="hero-cta">Смотреть каталог &rarr;</a>
         <div class="scroll-line"></div>
     </section>
-    
+
     <!-- About -->
     <section class="about" id="about">
         <div class="about-grid">
@@ -704,8 +832,8 @@
                         кофейни и понимают: хорошее оборудование — это не расход, а инвестиция.
                     </p>
                     <p>
-                        Итальянские кофемашины, которые стоят вдвое дороже у официалов. Мебель с заводов, 
-                        которые не выходят на розничный рынок. LED-экраны и световые решения из Шанхая — 
+                        La Marzocco, Mahlkönig и другие топовые бренды по ценам с доставкой до вашего города. 
+                        Мебель с заводов, которые не выходят на розничный рынок. LED-экраны и световые решения — 
                         то, что превращает обычную кофейню в место силы.
                     </p>
                 </div>
@@ -729,7 +857,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Products -->
     <section class="products" id="products">
         <div class="products-header">
@@ -739,104 +867,222 @@
             </div>
             <div class="products-filter reveal">
                 <button class="filter-btn active" onclick="filterProducts('all')">Всё</button>
-                <button class="filter-btn" onclick="filterProducts('machines')">Оборудование</button>
+                <button class="filter-btn" onclick="filterProducts('machines')">Кофемашины</button>
+                <button class="filter-btn" onclick="filterProducts('grinders')">Кофемолки</button>
                 <button class="filter-btn" onclick="filterProducts('furniture')">Мебель</button>
                 <button class="filter-btn" onclick="filterProducts('lighting')">Свет</button>
             </div>
         </div>
-        
-        <div class="products-grid">
-            <div class="product-card reveal" data-category="machines">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО КОФЕМАШИНЫ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv» target="_blank" class="product-cta">Заказать в Telegram</a>
+
+        <div class="carousel-container reveal">
+            <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&larr;</button>
+            <button class="carousel-btn next" onclick="scrollCarousel(1)">&rarr;</button>
+
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Кофемашины -->
+                <div class="product-card" data-category="machines">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.coffeemachinedepot.com/e8722a9562a2b3fc129df1936ad4e5c253bf5473.webp" alt="La Marzocco Linea PB AV 2GR">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемашина</div>
+                        <h3 class="product-name">La Marzocco Linea PB AV 2GR</h3>
+                        <div class="product-price"><span>$13,000</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Кофемашина</div>
-                    <h3 class="product-name">La Marzocco Linea PB</h3>
-                    <div class="product-price">от <span>€4,200</span> (в РФ от €7,500)</div>
-                </div>
-            </div>
-            
-            <div class="product-card reveal reveal-delay-1" data-category="machines">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО КОФЕМОЛКИ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+
+                <div class="product-card" data-category="machines">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/brewinggadgets.com/9a60e39b8ac1b360a27d916216ffc11693ac276d.webp" alt="La Marzocco Strada X 2GR">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемашина</div>
+                        <h3 class="product-name">La Marzocco Strada X 2GR</h3>
+                        <div class="product-price"><span>$31,150</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Кофемолка</div>
-                    <h3 class="product-name">Mazzer Major V</h3>
-                    <div class="product-price">от <span>€890</span> (в РФ от €1,400)</div>
-                </div>
-            </div>
-            
-            <div class="product-card reveal reveal-delay-2" data-category="furniture">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО МЕБЕЛИ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+
+                <div class="product-card" data-category="machines">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.coffeemachinedepot.com/89d6cfe070ff584b6f03cc0231c162b585254704.png" alt="La Marzocco GB5S AV 2GR">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемашина</div>
+                        <h3 class="product-name">La Marzocco GB5S AV 2GR</h3>
+                        <div class="product-price"><span>$12,500</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Мебель</div>
-                    <h3 class="product-name">Барная стойка под заказ</h3>
-                    <div class="product-price">от <span>€1,800</span> за погонный метр</div>
-                </div>
-            </div>
-            
-            <div class="product-card reveal" data-category="lighting">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО LED-ПАНЕЛИ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+
+                <div class="product-card" data-category="machines">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.lamarzocco.com/7a850bd4eea479add68278c9acc972dc7755e976.png" alt="La Marzocco Linea Classic S LC-S">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемашина</div>
+                        <h3 class="product-name">La Marzocco Linea Classic S LC-S</h3>
+                        <div class="product-price"><span>$9,700</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Свет</div>
-                    <h3 class="product-name">LED панель «Живое стекло»</h3>
-                    <div class="product-price">от <span>€650</span> за м²</div>
-                </div>
-            </div>
-            
-            <div class="product-card reveal reveal-delay-1" data-category="machines">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО КОФЕМАШИНЫ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+
+                <!-- Кофемолки -->
+                <div class="product-card" data-category="grinders">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.shub.coffee/6e6dcf98983d482d0c701fd589e96419578b3ec6.png" alt="Mahlkönig E65W GBS">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемолка</div>
+                        <h3 class="product-name">Mahlkönig E65W GBS</h3>
+                        <div class="product-price"><span>$3,100</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Кофемашина</div>
-                    <h3 class="product-name">Victoria Arduino Eagle One</h3>
-                    <div class="product-price">от <span>€5,100</span> (в РФ от €8,900)</div>
-                </div>
-            </div>
-            
-            <div class="product-card reveal reveal-delay-2" data-category="furniture">
-                <div class="product-image">
-                    <span class="placeholder-text">ФОТО СТУЛЬЕВ</span>
-                    <div class="product-overlay">
-                        <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+
+                <div class="product-card" data-category="grinders">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.boncafe.co.th/e5a281996ec805167c71506a6435da2abbd0830b.jpg" alt="Mahlkönig E65S">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемолка</div>
+                        <h3 class="product-name">Mahlkönig E65S</h3>
+                        <div class="product-price"><span>$1,700</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <div class="product-category">Мебель</div>
-                    <h3 class="product-name">Барные стулья HAY</h3>
-                    <div class="product-price">от <span>€120</span> за шт.</div>
+
+                <div class="product-card" data-category="grinders">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.mahlkoenig.com/8e6489ba4fbb0a6d684338d753dc57fa9d6ea60a.webp" alt="Mahlkönig E80W GBS">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемолка</div>
+                        <h3 class="product-name">Mahlkönig E80W GBS</h3>
+                        <div class="product-price"><span>$3,900</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grinders">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.mahlkoenig.com/49009909f9f0ffee4efc65232aa0d4f1a4c061ce.webp" alt="Mahlkönig E80S">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемолка</div>
+                        <h3 class="product-name">Mahlkönig E80S</h3>
+                        <div class="product-price"><span>$3,100</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="grinders">
+                    <div class="product-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/cdn11.bigcommerce.com/0b5491dcad4ce605cb9c2edf6a181cb392e185a2.jpg" alt="Mahlkönig EK43">
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Кофемолка</div>
+                        <h3 class="product-name">Mahlkönig EK43</h3>
+                        <div class="product-price"><span>$3,100</span></div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
+                </div>
+
+                <!-- Мебель -->
+                <div class="product-card" data-category="furniture">
+                    <div class="product-image">
+                        <span class="placeholder-text" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#404040;">ФОТО МЕБЕЛИ</span>
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Мебель</div>
+                        <h3 class="product-name">Барная стойка под заказ</h3>
+                        <div class="product-price">от <span>€1,800</span> за погонный метр</div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="furniture">
+                    <div class="product-image">
+                        <span class="placeholder-text" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#404040;">ФОТО СТУЛЬЕВ</span>
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Мебель</div>
+                        <h3 class="product-name">Барные стулья HAY</h3>
+                        <div class="product-price">от <span>€120</span> за шт.</div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
+                </div>
+
+                <!-- Свет -->
+                <div class="product-card" data-category="lighting">
+                    <div class="product-image">
+                        <span class="placeholder-text" style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#404040;">ФОТО LED-ПАНЕЛИ</span>
+                        <div class="product-overlay">
+                            <a href="https://t.me/shamllovv" target="_blank" class="product-cta">Заказать в Telegram</a>
+                            <a href="https://wa.me/79289472555" target="_blank" class="product-cta">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Свет</div>
+                        <h3 class="product-name">LED панель «Живое стекло»</h3>
+                        <div class="product-price">от <span>€650</span> за м²</div>
+                        <div class="product-delivery">Цена с доставкой</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Process -->
     <section class="process" id="process">
         <div class="section-label reveal">Как это работает</div>
         <h2 class="section-title reveal">От идеи до открытия кофейни</h2>
-        
+
         <div class="process-grid">
             <div class="process-item reveal">
                 <div class="process-number">01</div>
@@ -845,7 +1091,7 @@
                     <p class="process-desc">Смотрите каталог или присылаете фото того, что видели. Я проверяю наличие и цену в течение 24 часов.</p>
                 </div>
             </div>
-            
+
             <div class="process-item reveal reveal-delay-1">
                 <div class="process-number">02</div>
                 <div class="process-content">
@@ -853,7 +1099,7 @@
                     <p class="process-desc">Еду на завод или склад, снимаю видео, проверяю качество. Вы видите товар до оплаты.</p>
                 </div>
             </div>
-            
+
             <div class="process-item reveal reveal-delay-2">
                 <div class="process-number">03</div>
                 <div class="process-content">
@@ -861,7 +1107,7 @@
                     <p class="process-desc">Организую доставку до вашего города. Работаю с проверенными логистами 5 лет.</p>
                 </div>
             </div>
-            
+
             <div class="process-item reveal reveal-delay-3">
                 <div class="process-number">04</div>
                 <div class="process-content">
@@ -871,25 +1117,26 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <h2 class="cta-title reveal">Готовы обсудить вашу кофейню?</h2>
         <p class="cta-subtitle reveal">
-            Напишите мне в Telegram. Расскажу, что сейчас есть в наличии, 
+            Напишите мне в Telegram или WhatsApp. Расскажу, что сейчас есть в наличии, 
             сколько это стоит и как быстро привезём.
         </p>
         <div class="cta-buttons reveal">
             <a href="https://t.me/shamllovv" target="_blank" class="btn-primary">Написать в Telegram</a>
+            <a href="https://wa.me/79289472555" target="_blank" class="btn-whatsapp">Написать в WhatsApp</a>
             <a href="#products" class="btn-secondary">Смотреть каталог</a>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
             <div>
-                <div class="footer-brand">Coffee China</div>
+                <div class="footer-brand">Muhammadali Shamilov</div>
                 <p class="footer-desc">
                     Импорт оборудования и мебели для кофеен напрямую из Китая. 
                     Без посредников и наценок.
@@ -907,6 +1154,7 @@
                 <div class="footer-title">Категории</div>
                 <ul class="footer-links">
                     <li><a href="#products">Кофемашины</a></li>
+                    <li><a href="#products">Кофемолки</a></li>
                     <li><a href="#products">Мебель</a></li>
                     <li><a href="#products">Свет и LED</a></li>
                 </ul>
@@ -915,40 +1163,85 @@
                 <div class="footer-title">Контакты</div>
                 <ul class="footer-links">
                     <li><a href="https://t.me/shamllovv" target="_blank">Telegram</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="mailto:hello@coffeechina.ru">Email</a></li>
+                    <li><a href="https://wa.me/79289472555" target="_blank">WhatsApp</a></li>
+                    <li><a href="mailto:hello@shamilov.pro">Email</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-copy">2026 Coffee China</div>
+            <div class="footer-copy">2026 Muhammadali Shamilov</div>
             <div class="footer-social">
                 <a href="https://t.me/shamllovv" target="_blank">Telegram</a>
-                <a href="#">Instagram</a>
+                <a href="https://wa.me/79289472555" target="_blank">WhatsApp</a>
             </div>
         </div>
     </footer>
-    
+
     <script>
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
         }
-        
+
+        let currentCarouselIndex = 0;
+        let visibleCards = 3;
+
+        function updateVisibleCards() {
+            if (window.innerWidth <= 768) {
+                visibleCards = 1;
+            } else if (window.innerWidth <= 1024) {
+                visibleCards = 2;
+            } else {
+                visibleCards = 3;
+            }
+        }
+
+        function scrollCarousel(direction) {
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.product-card');
+            const visible = Array.from(cards).filter(c => c.style.display !== 'none');
+            const maxIndex = Math.max(0, visible.length - visibleCards);
+
+            currentCarouselIndex += direction;
+            if (currentCarouselIndex < 0) currentCarouselIndex = 0;
+            if (currentCarouselIndex > maxIndex) currentCarouselIndex = maxIndex;
+
+            const cardWidth = visible[0].offsetWidth + 20;
+            track.style.transform = `translateX(-${currentCarouselIndex * cardWidth}px)`;
+
+            updateCarouselButtons(visible.length);
+        }
+
+        function updateCarouselButtons(visibleCount) {
+            const prev = document.querySelector('.carousel-btn.prev');
+            const next = document.querySelector('.carousel-btn.next');
+            const maxIndex = Math.max(0, visibleCount - visibleCards);
+
+            prev.classList.toggle('hidden', currentCarouselIndex === 0);
+            next.classList.toggle('hidden', currentCarouselIndex >= maxIndex);
+        }
+
         function filterProducts(category) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
-            document.querySelectorAll('.product-card').forEach(card => {
+
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
-                    setTimeout(() => card.style.opacity = '1', 10);
                 } else {
-                    card.style.opacity = '0';
-                    setTimeout(() => card.style.display = 'none', 300);
+                    card.style.display = 'none';
                 }
             });
+
+            currentCarouselIndex = 0;
+            track.style.transform = 'translateX(0)';
+
+            const visible = Array.from(cards).filter(c => c.style.display !== 'none');
+            updateCarouselButtons(visible.length);
         }
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -956,11 +1249,38 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        
+
         window.addEventListener('scroll', () => {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        window.addEventListener('resize', () => {
+            updateVisibleCards();
+            const track = document.getElementById('carouselTrack');
+            const cards = track.querySelectorAll('.product-card');
+            const visible = Array.from(cards).filter(c => c.style.display !== 'none');
+            currentCarouselIndex = 0;
+            track.style.transform = 'translateX(0)';
+            updateCarouselButtons(visible.length);
+        });
+
+        updateVisibleCards();
+
+        // Touch swipe for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const track = document.getElementById('carouselTrack');
+
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) scrollCarousel(1);
+            if (touchEndX - touchStartX > 50) scrollCarousel(-1);
         });
     </script>
 </body>
